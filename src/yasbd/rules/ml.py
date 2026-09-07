@@ -25,7 +25,7 @@ class MlRules(Rules):
     }
 
     REFERENCE_ABBRVS = Rules.REFERENCE_ABBRVS | {
-        "പൃ", "ഉദാ", "സമ്പാ", "അധ്യാ", "വിഭാ", "പരി",
+        "പൃ", "സമ്പാ", "അധ്യാ", "വിഭാ", "പരി",
         "പു.കു", "വി.കാ",
     }
 

@@ -26,12 +26,12 @@ class LtRules(Rules):
         # Bibliographical & Citation Indicators
         # (Typically precede numbers/values)
         "t", "l", "psl", "str", "skyr", "pav", "lent", "sk",
-        "red", "leid", "žr", "plg", "pvz", "nr", "egz",
+        "red", "leid", "žr", "plg", "nr",
         "t.t", "ir kt",
     }
 
     INLINE_ONLY_ABBRVS = Rules.INLINE_ONLY_ABBRVS | {
-        "t.y", "š.m", "b.m", "g", "pr",
+        "pvz", "egz", "t.y", "š.m", "b.m", "g", "pr",
     }
 
     SECTION_MARKERS = Rules.SECTION_MARKERS | {

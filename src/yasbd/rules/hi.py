@@ -34,7 +34,7 @@ class HiRules(Rules):
 
     REFERENCE_ABBRVS = Rules.REFERENCE_ABBRVS | {
         # Publishing, Citations, Layout, and Document Structures
-        "पृ", "चि", "भा", "अनु", "अध", "पैरा", "क्र", "उदा", "टि", "कृ",
+        "पृ", "चि", "भा", "अनु", "अध", "पैरा", "क्र", "टि", "कृ",
         "अध्या", "परि", "पु", "पन्", "स्त", "सा", "संपा", "अनुवा", "प्रका",
         "सार", "विव", "ता", "तुल", "सू", "सूच",
 
@@ -44,7 +44,7 @@ class HiRules(Rules):
     }
 
     INLINE_ONLY_ABBRVS = Rules.INLINE_ONLY_ABBRVS | {
-        "बनाम", "वि.द्र", "पु.श्च", "स्था", "चौ", "जि"
+        "उदा", "बनाम", "वि.द्र", "पु.श्च", "स्था", "चौ", "जि"
     }
 
     COMMON_SENT_STARTERS = {
