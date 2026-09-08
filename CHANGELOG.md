@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- **Afrikaans/Dutch title `Mev.`** ([#289](https://github.com/speedyk-005/yasbd-lib/issues/289)): Added the missing `mev` honorific to `TITLE_ABBRVS` in `nl.py`, which Afrikaans inherits, preventing false sentence splits after `Mev. Jansen` (e.g., `Mev. Jansen praat.` no longer splits after `Mev.`).
+- **Afrikaans/Dutch title `Mev.`** ([#297](https://github.com/speedyk-005/yasbd-lib/pull/297)): Added the missing `mev` honorific to `TITLE_ABBRVS` in `nl.py`, which Afrikaans inherits, preventing false sentence splits after `Mev. Jansen` (e.g., `Mev. Jansen praat.` no longer splits after `Mev.`).
 - **Russian abbreviation coverage** ([#278](https://github.com/speedyk-005/yasbd-lib/pull/278)): Expanded `TITLE_ABBRVS`, `REFERENCE_ABBRVS`, and `INLINE_ONLY_ABBRVS` with missing Russian abbreviations, and added Cyrillic initial-chain handling to `MID_SENTENCE_FINDER_LST` to prevent false splits (e.g., `Арх. Иванов` and `Проф. Петров А.К.`).
 - **List boundary ordering** ([#277](https://github.com/speedyk-005/yasbd-lib/pull/277)): Run list boundary adjustment before mid-sentence filtering to prevent re-adding boundaries suppressed by abbreviation handling (e.g., `И т. д.` no longer splits).
 
