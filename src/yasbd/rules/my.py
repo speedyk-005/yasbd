@@ -78,12 +78,15 @@ class MyRules(Rules):
         super()._compile_regex_dynamically()
 
         cls.FINAL_PARTICLES_FINDER = re.compile(
-            rf"{build_optimized_pattern(cls.DISCOURSE_FINAL_PARTICLES)}(?!\s*[.?!;:။၏])"
+            rf"{build_optimized_pattern(cls.DISCOURSE_FINAL_PARTICLES)}(?!\s*[.?!;:။၏၊])"
         )
+        cls.DOUBLE_COMMA_FINDER = re.compile("၊၊")
 
     def post_process_boundaries(
         self, sentence_boundaries: set[int], text: str
     ) -> None:
         sentence_boundaries.update(
-            m.end() for m in self.FINAL_PARTICLES_FINDER.finditer(text)
+            m.end()
+            for finder in (self.FINAL_PARTICLES_FINDER, self.DOUBLE_COMMA_FINDER)
+            for m in finder.finditer(text)
         )
