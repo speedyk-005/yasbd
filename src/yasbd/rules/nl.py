@@ -31,7 +31,7 @@ class NlRules(DeRules):
         "bijl", "ca", "cf", "ed", "vert", "id",
 
         # Legal, Corporate, and Formal Citation Markers
-        "b.w", "gem", "coll", "hr", "c.q", "ov", "vp",
+        "b.w", "gem", "coll", "hr", "c.q", "ov", "vp", "d.d",
     }
 
     SECTION_MARKERS = Rules.SECTION_MARKERS | {
@@ -42,7 +42,7 @@ class NlRules(DeRules):
 
     INLINE_ONLY_ABBRVS = DeRules.INLINE_ONLY_ABBRVS | {
         "bijv", "ca", "d.w.z", "e.v.t.l", "excl", "incl",
-        "z.g.n",
+        "z.g.n", "mln", "m.b.t", "zgn",
     }
 
     DATE_ABBRVS = Rules.DATE_ABBRVS | {

@@ -7,6 +7,10 @@ TEST_DATA = [
     "Heb je nummer 2 verwijderd?| Maak het alsjeblieft ongedaan.",
 
     # Abbreviations
+    "Het budget bedraagt 5 mln. euro.| Dat is veel.",
+    "Jan d.d. 10-03-2020 tekende het contract.| Piet deed dat niet.",
+    "Zie m.b.t. 2024 het jaarverslag.| Alles staat erin.",
+    "De zgn. Nederlandse aanpak werkt.| Wij gaan verder.",
     "Mijn naam is Jonas E. Schmidt.",
     "Blader alstublieft naar pag. 55.",
     "Ik kan de Mt. Fuji vanaf hier zien liggen.",

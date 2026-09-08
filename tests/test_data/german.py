@@ -7,6 +7,9 @@ TEST_DATA = [
     "Hast du die Nummer 2 entfernt?| Bitte mach es rückgängig.",
 
     # Abbreviations
+    "Die Kosten betrugen etwa 5 Mio. Euro.| Das ist viel.",
+    "Deutschland hat 83 Mio. Einwohner.| Das sind frische Zahlen.",
+    "Die Ausgaben betragen 2 Mrd. Euro.| Wir prüfen die Zahlen.",
     "Mein Name ist Jonas E. Schmidt.",
     "Bitte blättern Sie zu S. 55.",
     "Ich kann den Mt. Fuji von hier aus sehen.",
