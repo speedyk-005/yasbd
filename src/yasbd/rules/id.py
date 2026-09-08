@@ -28,12 +28,12 @@ class IdRules(Rules):
     }
 
     CORP_ENTITY_ABBRVS = Rules.CORP_ENTITY_ABBRVS | {
-        "pte", "bhd", "sdn",
+        "pte", "bhd", "sdn", "pt", "cv",
     }
 
     REFERENCE_ABBRVS = Rules.REFERENCE_ABBRVS | {
         "hlm", "hal", "bab", "jil", "lamp", "ttd", "stt",
-        "cet", "terj", "dok", "pas",
+        "cet", "terj", "dok", "pas", "pk", "tgl",
     }
 
     SECTION_MARKERS = Rules.SECTION_MARKERS | {
