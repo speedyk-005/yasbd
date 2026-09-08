@@ -24,6 +24,7 @@ TEST_DATA = [
     "È nato il 5 gen. 1990.",
     "La società è una S.P.A. con sede a Roma.",
     "La S.R.L. ha depositato il bilancio.",
+    "Chiama il tel. 555-0199.| Il fax. 02-555 è guasto.",
 
     # Structural headings
     "Capitolo 1. L'Inizio.| Era buio fuori.| Nulla si muoveva.",

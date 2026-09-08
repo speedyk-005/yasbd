@@ -7,6 +7,7 @@ A massive thank you to the open source community helping make `yasbd` more accur
 | **[@speedyk-005](https://github.com/speedyk-005)** | Maintainer & Creator |
 | **[@1cbyc](https://github.com/1cbyc)** | Coordinate direction abbreviation fix |
 | **[@AshSgDe29071999](https://github.com/AshSgDe29071999)** | Combined same-module imports in `__init__.py`; named cleaning-pipeline helpers for testability |
+| **[@be-student](https://github.com/be-student)** | Shared numeric-context tel/fax and Portuguese aprox abbreviation fixes |
 | **[@cnaples79](https://github.com/cnaples79)** | Missing comma in set literals fix |
 | **[@ColumbusLabs](https://github.com/ColumbusLabs)** | Preserve word boundaries across StreamCleaner line breaks |
 | **[@ddelrio1986](https://github.com/ddelrio1986)** | Spelling and grammar fixes in docs |
@@ -24,6 +25,7 @@ A massive thank you to the open source community helping make `yasbd` more accur
 | **[@NataliaPerez08](https://github.com/NataliaPerez08)** | Deduplicate offsets before sorting in `BoundaryDetector._run_hook()` to keep boundaries unique |
 | **[@Rajesh270712](https://github.com/Rajesh270712)** | Base + English rule contributions |
 | **[@sanmaxdev](https://github.com/sanmaxdev)** | Language tag normalization helper |
+| **[@sonalisrisivani](https://github.com/sonalisrisivani)** | Unicode newline-inside-sentence detection fix |
 | **[@terminalchai](https://github.com/terminalchai)** | Burmese and Thai reporting words fix |
 | **[@XEDAB](https://github.com/XEDAB)** | Replaced manual adjacent boundary iteration with `itertools.pairwise` |
 | **[@YuEfSaEDU](https://github.com/YuEfSaEDU)** | Afrikaans/Dutch title `Mev.` abbreviation fix |

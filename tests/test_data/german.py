@@ -19,6 +19,7 @@ TEST_DATA = [
     "Wir sehen uns am Fr., 14. Feb.",
     "Sie finden es unter Nr. 1026.253.553.| Dort ist der Schatz.",
     "Wir wählen zuerst Option A.| Danach besprechen wir die Details.",
+    "Rufen Sie Tel. 555-0199 an.| Senden Sie ein Fax. 02-555 morgen.",
 
     # Structural headings
     "Kapitel 1. Der Anfang.| Es war dunkel und still im Raum. | Nichts bewegte sich.",
