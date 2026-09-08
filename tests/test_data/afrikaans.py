@@ -16,6 +16,7 @@ TEST_DATA = [
     "Sien afb. 2 in deel 3, hfst. 4, bl. 18-22.",
     "Ons sien mekaar op vr. 14 Feb.",
     "Die vergadering is om 14.| Vandag bespreek ons die besonderhede.",
+    "Mev. Jansen praat met mnr. Botha.| Mev. Van der Merwe sluit aan.",
     "Die V.S. regering het 'n nuwe wet aangeneem.",
 
     # Structural headings

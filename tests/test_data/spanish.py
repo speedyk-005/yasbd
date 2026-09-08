@@ -15,6 +15,7 @@ TEST_DATA = [
     "Vea el cap. 3 en el t. II de la obra.",
     "El art. 4 y el nro. 8 son clave.",
     "Llama al dir. general al tel. 555-1234.",
+    "Llama al tel. 555-0199.| Envía el fax. 02-555 mañana.",
     "Compré pan, leche, etc. para la cena.",
     "Lea p. ej. el capítulo 5.",
     "Ayer le dije que no.| 5 personas llegaron después.",

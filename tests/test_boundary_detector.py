@@ -232,6 +232,14 @@ def test_universal_regression(en_detector, marked_text):
     assert result == expected, f"Input: {input_text}"
 
 
+def test_cyrillic_newline_inside_sentence():
+    """Test that Cyrillic lowercase after a newline is sentence-internal (fix for #274)."""
+    detector = BoundaryDetector(lang="ru")
+    result = list(detector.segment("Это\nслово продолжается."))
+    assert len(result) == 1
+    assert result[0].replace("\n", " ") == "Это слово продолжается."
+
+
 def test_post_processing_hook_supports_mutation():
     """test that a hook can remove and add boundaries in place."""
 

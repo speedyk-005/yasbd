@@ -24,7 +24,7 @@ class EsRules(Rules):
     }
 
     REFERENCE_ABBRVS = (Rules.REFERENCE_ABBRVS - {"no", "nos", "para"}) | {
-        "pág", "núm", "nro", "dir", "t", "tel", "trad", "asoc", "aprox",
+        "pág", "núm", "nro", "dir", "t", "trad", "asoc", "aprox",
         "cf", "incl", "cía", "s",
     }
 

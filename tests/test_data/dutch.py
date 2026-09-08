@@ -20,6 +20,7 @@ TEST_DATA = [
     "U vindt het onder nr. 1026.253.553.| Daar ligt de schat.",
     "We kiezen eerst optie A.| Daarna bespreken we de details.",
     "De vergadering begint om 14.| Vandaag bespreken we de details.",
+    "Mev. Jansen spreekt met dhr. Bakker.| Mevr. De Vries komt later langs.",
 
     # Structural headings
     "Hoofdstuk 1. Het begin.| Het was donker en stil in de kamer.| Niets bewoog.",

@@ -14,7 +14,7 @@ class NlRules(DeRules):
         "ba", "ma", "bsc", "msc",
 
         # Social Honorifics and Clergy
-        "dhr", "mnr", "mevr", "mw", "ds", "arts",
+        "dhr", "mnr", "mev", "mevr", "mw", "ds", "arts",
 
         # Military Ranks
         "lt-gen", "maj-gen", "bgen", "kol", "lt-kol",
