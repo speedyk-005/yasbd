@@ -6,11 +6,12 @@ Prerequisites:
 """
 
 import asyncio
-import os
 import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
+import aiofiles
 import edge_tts
 import miniaudio
 
@@ -36,10 +37,7 @@ class LiveTTS:
 
         if exception:
             error_msg = str(exception)
-            if (
-                "Connection lost" in error_msg
-                and "Connection reset by peer" in error_msg
-            ):
+            if "Connection lost" in error_msg and "Connection reset by peer" in error_msg:
                 return
 
         if "SSL handshake failed" in message or "SSLWantReadError" in message:
@@ -49,7 +47,7 @@ class LiveTTS:
 
     def _generate_tts_sync(self, text: str) -> str:
         """Generate TTS for a single sentence and save to temp file."""
-        tmp_file = tempfile.NamedTemporaryFile(suffix=".mp3", delete=False)
+        tmp_file = tempfile.NamedTemporaryFile(suffix=".mp3", delete=False)  # noqa: SIM115
         tmp_file_path = tmp_file.name
         tmp_file.close()
 
@@ -97,7 +95,7 @@ class LiveTTS:
             for audio_file in executor.map(self._generate_tts_sync, chunks):
                 if audio_file:
                     self._play_audio(audio_file)
-                    os.remove(audio_file)
+                    Path(audio_file).unlink()
 
 
 # Example usage
