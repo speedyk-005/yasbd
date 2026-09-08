@@ -5,7 +5,7 @@ from yasbd.rules.nl import NlRules
 class AfRules(NlRules):
 
     TITLE_ABBRVS = NlRules.TITLE_ABBRVS | {
-        "adv", "ds", "at", "mej", "me",
+        "adv", "ds", "at", "mej", "me", "mev",
     }
 
     DOTTED_GEOPOL_ABBRVS = NlRules.DOTTED_GEOPOL_ABBRVS | {

@@ -17,6 +17,7 @@ TEST_DATA = [
     "Ons sien mekaar op vr. 14 Feb.",
     "Die vergadering is om 14.| Vandag bespreek ons die besonderhede.",
     "Die V.S. regering het 'n nuwe wet aangeneem.",
+    "Mev. Jansen praat.| Mnr. Botha luister.",
 
     # Structural headings
     "Hoofstuk 1. Die begin.| Dit was donker en stil in die kamer.| Niks het beweeg nie.",
