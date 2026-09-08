@@ -31,3 +31,4 @@ changelog:
       labels:
         - documentation
         - benchmark
+        - example

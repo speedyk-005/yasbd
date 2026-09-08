@@ -25,6 +25,7 @@ A massive thank you to the open source community helping make `yasbd` more accur
 | **[@NataliaPerez08](https://github.com/NataliaPerez08)** | Deduplicate offsets before sorting in `BoundaryDetector._run_hook()` to keep boundaries unique |
 | **[@nightcityblade](https://github.com/nightcityblade)** | Inline example abbreviation fixes for Hindi, Lithuanian, Malayalam, and Russian |
 | **[@Rajesh270712](https://github.com/Rajesh270712)** | Base + English rule contributions |
+| **[@revanthajoe](https://github.com/revanthajoe)** | ASR/Transcript Segmentation Example |
 | **[@sanmaxdev](https://github.com/sanmaxdev)** | Language tag normalization helper |
 | **[@sonalisrisivani](https://github.com/sonalisrisivani)** | Unicode newline-inside-sentence detection fix |
 | **[@terminalchai](https://github.com/terminalchai)** | Burmese and Thai reporting words fix |
