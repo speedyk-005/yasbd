@@ -148,6 +148,7 @@ ignore = ["PLW2901", "COM812", "D203", "D213", "RUF001", "RUF003", "RUF012", "S3
 "src/yasbd/utils/*.py" = ["E501", "BLE001", "FBT001", "FBT002", "PLR2004"]
 "tests/*" = ["E501", "S101", "PLR2004", "Q0", "ERA001", "SLF001", "PT006", "ARG002"]
 "benchmarks/*" = ["E501", "FBT001", "FBT002", "PLR2004", "BLE001", "INP001"]
+"examples/*" = ["INP001"]
 
 [tool.ruff.format]
 exclude = [".git", ".venv", "build", "dist", "tests/*.py", "*/EN_GOLDEN_DATA.py"]
