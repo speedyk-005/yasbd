@@ -19,6 +19,7 @@ TEST_DATA = [
     "Lent. 1 pateikia duomenų suvestinę.| Rezultatai aiškiai matomi.",
     "Buvo ištirta 10 skirtingų rūšių, t. y. visi Lietuvoje aptinkami pavyzdžiai.",
     "Rinkoje siūloma daug įvairių produktų, pvz., ekologiški užkandžiai.",
+    "Tai pvz. Žodis čia.",
     "Palyginkite šiuos du metodus, plg. 3 ir 4 lenteles.",
     "Straipsnį parašė doc. dr. A. Petraitis.",
     "Į sutartį įtrauktos kelios dalys, ir kt. punktai.",
