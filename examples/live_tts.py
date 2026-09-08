@@ -18,13 +18,13 @@ from yasbd import BoundaryDetector
 
 
 class LiveTTS:
-    def __init__(self, voice: str = "en-US-AriaNeural", n_jobs: int = 3) -> None:
+    def __init__(self, voice: str = "en-US-AriaNeural", n_jobs: int = 4) -> None:
         """
         Initialize the streaming client.
 
         Args:
-            voice (str): Edge TTS voice model name
-            n_jobs (int, optional): Number of parallel TTS generation jobs
+            voice: Edge TTS voice model name
+            n_jobs: Number of parallel TTS generation jobs
         """
         self.voice = voice
         self.n_jobs = n_jobs
