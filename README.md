@@ -248,11 +248,13 @@ from yasbd.boundary_detector import BoundaryDetector
 detector = BoundaryDetector(lang="en")
 
 # With all options (so far.)
+# fmt: off
 detector = BoundaryDetector(
     # ISO 639 code (e.g., en, fr, es, ...). Required.
     # Use "auto" for automatic detection.
     # https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
     lang="fr",
+
     # Optional external language pack modules to load. Defaults to `None`.
     # Each pack is validated and stored in a private registry for this detector only.
     # Check #-lang-packs for more.
@@ -260,6 +262,7 @@ detector = BoundaryDetector(
     # Don't split inside them. (It won't protect block quotes) Defaults to `True`.
     # https://en.wikipedia.org/wiki/Block_quotation
     preserve_quote_and_paren=True,
+
     # Enable verbose logging. Defaults to `False`.
     verbose=True,
 )
