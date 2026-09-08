@@ -2,7 +2,7 @@
 Generates and plays Edge TTS audio sentence-by-sentence with parallel generation.
 
 Prerequisites:
-    pip install miniaudio, edge_tts
+    pip install miniaudio, edge_tts, aiofiles
 """
 
 import asyncio
@@ -36,7 +36,10 @@ class LiveTTS:
 
         if exception:
             error_msg = str(exception)
-            if "Connection lost" in error_msg and "Connection reset by peer" in error_msg:
+            if (
+                "Connection lost" in error_msg
+                and "Connection reset by peer" in error_msg
+            ):
                 return
 
         if "SSL handshake failed" in message or "SSLWantReadError" in message:
@@ -55,10 +58,10 @@ class LiveTTS:
                 text, self.voice, rate="+15%"
             )  # For slight energy boost
 
-            with open(tmp_file_path, "wb") as file:
+            async with aiofiles.open(tmp_file_path, "wb") as file:
                 async for chunk in communicate.stream():
                     if chunk["type"] == "audio":
-                        file.write(chunk["data"])
+                        await file.write(chunk["data"])
 
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)

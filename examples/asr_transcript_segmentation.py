@@ -42,7 +42,7 @@ def main() -> None:
     for i, sentence in enumerate(sentences, start=1):
         print(f"{i}: {sentence}")
 
-    assert sentences == EXPECTED_SENTENCES, (
+    assert sentences == EXPECTED_SENTENCES, (  # noqa: S101
         f"Segmentation drifted from the expected transcript sentences. Got: {sentences}"
     )
     print("\nOK: transcript segmented into complete sentences as expected.")
