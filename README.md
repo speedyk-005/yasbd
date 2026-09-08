@@ -102,14 +102,15 @@ Nope!! It is a two-pass pipeline:
 
 Yasbd shines in real-world text processing scenarios where robust sentence boundaries matter, such as:
 
-- **📰 News & Article Processing**: Split news articles, blog posts, and journalism into sentences without mangling titles (`Dr.`, `Inc.`, `U.S.A.`) or breaking on decimals (`3.5M`, `$199.99`). Preserve complex citations (`Smith et al. (2021, pp. 128–129)`), section references (`Section 4.3(a)(ii)`), and URL query parameters without false splits.
-- **🤖 NLP Pipelines & Text Analytics**: Feed sentence-segmented text into tokenizers, named entity recognizers, or sentiment analyzers. Works as a fast, accurate preprocessor before parsing or embedding. Process 39 languages natively. Handle French compound abbreviations (`c.-à-d.`, `m.-à-j.`), Japanese quotes (`「...」`), and language-specific quirks automatically.
-- **📚 Document Chunking & RAG**: Split large documents into clean sentences for vector database ingestion, retrieval-augmented generation, or semantic search indexing. Preserves context boundaries in unstructured text.
-- **💬 Chat & Social Media Analysis**: Handle informal punctuation (`!!!`, `???`, `...`) and emoji reactions without fragmenting conversational intent. Perfect for chat logs, forum posts, and real-time messaging data.
-- **🌍 Multilingual NLP**: Process 39 languages natively. Handle French compound abbreviations (`c.-à-d.`, `m.-à-j.`), Japanese quotes (`「...」`), and language-specific quirks automatically.
-- **🧹 OCR & Noisy Text Cleanup**: Combine with `StreamCleaner` to fix OCR artifacts, mojibake, and HTML markup before segmentation. Ideal for PDF extraction and digitization workflows.
-- **🔗 spaCy Integration**: Use as a first-class spaCy pipeline component for fast, accurate sentence segmentation before dependency parsing or lemmatization.
-- **📦 CLI Text Processing**: Pipe documents directly into the command line for one-off batch segmentation without writing Python.
+- **📰 News & Article Processing**: Split articles without mangling titles (`Dr.`, `Inc.`), decimals (`3.5M`, `$199.99`), or citations (`Smith et al. (2021)`).
+- **🤖 NLP Pipelines & Text Analytics**: A fast preprocessor for tokenizers, NER, and sentiment analysis across 39 languages.
+- **📚 Document Chunking & RAG**: Clean sentence boundaries for vector database ingestion and retrieval-augmented generation.
+- **💬 Chat & Social Media Analysis**: Handles informal punctuation (`!!!`, `...`) and emoji without fragmenting conversational intent.
+- **🧹 OCR & Noisy Text Cleanup**: Combine with `StreamCleaner` to fix artifacts and mojibake before segmentation.
+- **📦 CLI Text Processing**: Pipe documents into the command line for one-off batch segmentation.
+
+> [!TIP]
+> Want it in action? Browse [`examples/`](examples/).
 
 ---
 
@@ -252,16 +253,13 @@ detector = BoundaryDetector(
     # Use "auto" for automatic detection.
     # https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
     lang="fr",
-
     # Optional external language pack modules to load. Defaults to `None`.
     # Each pack is validated and stored in a private registry for this detector only.
     # Check #-lang-packs for more.
     external_lang_packs=["yasbd_auxlang"],
-
     # Don't split inside them. (It won't protect block quotes) Defaults to `True`.
     # https://en.wikipedia.org/wiki/Block_quotation
     preserve_quote_and_paren=True,
-
     # Enable verbose logging. Defaults to `False`.
     verbose=True,
 )
@@ -322,16 +320,20 @@ Two detection modes:
 
 ```python
 # absolute mode (default)
-res= list(detector.detect('She turned to him, "This is great." She held the book out to show him.'))
+res = list(
+    detector.detect('She turned to him, "This is great." She held the book out to show him.')
+)
 print(res)
 # [35, 70]
 
 # relative mode with paragraph break
 detector.lang = "es"
-res = list(detector.detect(
-	"El Sr. García llegó ayer. La Sra. López también.\n\nVéase la pág. 55 del libro.",
-	relative=True,
-))
+res = list(
+    detector.detect(
+        "El Sr. García llegó ayer. La Sra. López también.\n\nVéase la pág. 55 del libro.",
+        relative=True,
+    )
+)
 print(res)
 # [25, 48, ParagraphEOF, 27]
 ```
@@ -349,10 +351,12 @@ print(res)
 # ['Hello world.', 'How are you?', 'I am fine.']
 
 # Multi-paragraph with whitespace preserved
-res = list(detector.segment(
-    "First para.\nStill first.\n\nSecond para.\nFinished.",
-    preserve_whitespace=True,
-))
+res = list(
+    detector.segment(
+        "First para.\nStill first.\n\nSecond para.\nFinished.",
+        preserve_whitespace=True,
+    )
+)
 print(res)
 # ['First para.', '\nStill first.', '\n\n', 'Second para.', '\nFinished.']
 ```
@@ -524,7 +528,9 @@ from yasbd.utils.pysbd_adapter import Segmenter
 # Or from yasbd.Pysbd_adapter import Segmenter
 
 seg = Segmenter(language="ja")
-res = seg.segment('田中さんは「準備は完了しました」そう言って部屋を出た。U.S.A.の経済政策は非常に複雑です。')
+res = seg.segment(
+    "田中さんは「準備は完了しました」そう言って部屋を出た。U.S.A.の経済政策は非常に複雑です。"
+)
 print(res)
 # ['田中さんは「準備は完了しました」そう言って部屋を出た。', 'U.S.A.の経済政策は非常に複雑です。']
 ```

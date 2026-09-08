@@ -9,12 +9,8 @@ from yasbd import BoundaryDetector
 
 _detector = BoundaryDetector("en")
 
-def chunk_text(
-    text: str,
-    lang: str,
-    max_sentences: int,
-    overlap_percent: int | float
-):
+
+def chunk_text(text: str, lang: str, max_sentences: int, overlap_percent: int | float):
     """Split text into overlapping sentence chunks for retrieval.
 
     Segments *text* into sentences with :class:`yasbd.BoundaryDetector`,
@@ -46,9 +42,9 @@ def chunk_text(
     overlap_num = (max_sentences * overlap_percent) // 100
     stride = max(1, max_sentences - overlap_num)
 
-    chunks = [sentences[:max_sentences]] # First chunk from start
+    chunks = [sentences[:max_sentences]]  # First chunk from start
     for idx in range(max_sentences, len(sentences), stride):
-        chunk = sentences[idx - overlap_num: idx + stride]
+        chunk = sentences[idx - overlap_num : idx + stride]
         chunks.append(chunk)
 
     # Join sentences within each sublist to form final string chunks
@@ -72,13 +68,8 @@ if __name__ == "__main__":
         The section is N.A.S.A. related.
     """)
 
-    chunks = chunk_text(
-        sample_text,
-        lang="en",
-        max_sentences=7,
-        overlap_percent=20
-    )
+    chunks = chunk_text(sample_text, lang="en", max_sentences=7, overlap_percent=20)
     for i, chunk in enumerate(chunks):
-        print(f"-- Chunk {i+1} --")
+        print(f"-- Chunk {i + 1} --")
         print(chunk)
         print()
