@@ -323,11 +323,15 @@ class Rules:
                """, re.X
             ),
 
-            # structural headings (e.g., "Section 1. The Beginning.")
+            # Structural headings (e.g., "Chapter 1. The Beginning.")
+            # and markdown headers (e.g., "### 1. The Regex Breakdown").
             re.compile(rf"""
-                \b(?:{build_optimized_pattern(cls.SECTION_MARKERS)})\s+
+                (?:
+                    ^\#{{1,6}}\s*|
+                    \b(?:{build_optimized_pattern(cls.SECTION_MARKERS)})\s+
+                )
                 (?:[\dIVXLCDM]+{cls.DOTS_PATTERN}){{1,3}}
-                """, re.X
+                """, re.M | re.X
             )
         ]
 
