@@ -225,6 +225,7 @@ def test_rule_cache_lru(en_detector):
 
         # markdown headers with trailing numbers stay whole (fix for #305)
         "### 1. The Regex Breakdown\n|### 2. Metric Interpretation",
+        "        ### 1. The Regex Breakdown\n|        ### 2. Metric Interpretation",
     ],
 )
 def test_universal_regression(en_detector, marked_text):

@@ -327,7 +327,7 @@ class Rules:
             # and markdown headers (e.g., "### 1. The Regex Breakdown").
             re.compile(rf"""
                 (?:
-                    ^\#{{1,6}}\s*|
+                    ^\s*\#{{1,6}}\s*|
                     \b(?:{build_optimized_pattern(cls.SECTION_MARKERS)})\s+
                 )
                 (?:[\dIVXLCDM]+{cls.DOTS_PATTERN}){{1,3}}
