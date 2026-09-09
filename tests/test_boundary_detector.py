@@ -157,6 +157,7 @@ def test_rule_cache_lru(en_detector):
     assert type(r_en) is type(r1), "freshly loaded en rule should exist"  # type: ignore[unreachable]
 
 
+# fmt: off
 @pytest.mark.parametrize(
     "marked_text",
     [
@@ -230,6 +231,7 @@ def test_universal_regression(en_detector, marked_text):
 
     result = list(en_detector.segment(input_text))
     assert result == expected, f"Input: {input_text}"
+# fmt: on
 
 
 def test_cyrillic_newline_inside_sentence():
@@ -240,14 +242,19 @@ def test_cyrillic_newline_inside_sentence():
     assert result[0].replace("\n", " ") == "Это слово продолжается."
 
 
+def test_markdown_numbered_headers_not_split():
+    """Test that markdown headers with trailing numbers stay whole (fix for #305)."""
+    detector = BoundaryDetector(lang="en")
+    result = list(detector.segment("### 1. The Regex Breakdown\n### 2. Metric Interpretation"))
+    assert result == ["### 1. The Regex Breakdown", "### 2. Metric Interpretation"]
+
+
 def test_post_processing_hook_supports_mutation():
     """test that a hook can remove and add boundaries in place."""
 
     def tweak(ctx):
         # Remove the boundary after "Hi." (join) and add one after "There" (split)
-        ctx["boundaries"] = [
-            pos for pos in ctx["boundaries"] if pos != 3
-        ] + [10]
+        ctx["boundaries"] = [pos for pos in ctx["boundaries"] if pos != 3] + [10]
 
     detector = BoundaryDetector(lang="en", hook=tweak)
     assert list(detector.segment("Hi. There world.")) == ["Hi. There", "world."]
