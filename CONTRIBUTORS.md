@@ -19,6 +19,7 @@ A massive thank you to the open source community helping make `yasbd` more accur
 | **[@JosephM961](https://github.com/JosephM961)** | Documentation additions and typo fixes |
 | **[@k-anushka14](https://github.com/k-anushka14)** | Removed unused timeout parameter from external cleaner; merged Pronouns & Demonstratives header into Pronouns |
 | **[@kernelpanic888](https://github.com/kernelpanic888)** | Non-German ordinal boundary inheritance fix |
+| **[@macjayz](https://github.com/macjayz)** | German/Dutch numeric and reference abbreviation fixes |
 | **[@MasRama](https://github.com/MasRama)** | Double boundary for `.\n` fix |
 | **[@Mayankshrey438](https://github.com/Mayankshrey438)** | Armenian language support & flattened list heuristic |
 | **[@MohammedAnasNathani](https://github.com/MohammedAnasNathani)** | Documentation for built-in language freeze |
